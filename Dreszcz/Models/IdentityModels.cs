@@ -29,5 +29,6 @@ namespace Dreszcz.Models
         {
             return new ApplicationDbContext();
         }
+        public DbSet<Character> Characters { get; set; }
     }
 }

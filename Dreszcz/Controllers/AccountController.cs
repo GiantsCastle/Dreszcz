@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Dreszcz.Models;
+using Dreszcz.Services;
 
 namespace Dreszcz.Controllers
 {
@@ -155,6 +156,11 @@ namespace Dreszcz.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    //this two lines calls service method creating character in db
+                    var service = new CharacterService(HttpContext.GetOwinContext().Get<ApplicationDbContext>());
+                    service.CreateCharacter(model.Login, user.Id);
+
+
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771

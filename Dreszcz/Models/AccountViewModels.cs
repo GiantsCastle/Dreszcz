@@ -65,6 +65,9 @@ namespace Dreszcz.Models
     public class RegisterViewModel
     {
         [Required]
+        public string Login { get; set; }
+
+        [Required]
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
