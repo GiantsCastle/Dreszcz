@@ -11,9 +11,15 @@ namespace Dreszcz.Models
 
         public string Login { get; set; }
 
+        public bool doorOpen { get; set; }
         //add character attributes here
 
         public virtual ApplicationUser User { get; set; }
         public string ApplicationUserId { get; set; }
+
+        public Character()
+        {
+            this.doorOpen = false;
+        }
     }
 }
