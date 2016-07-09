@@ -273,14 +273,14 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Game\paragraf1.cshtml" />
+    <Content Include="Views\Game\paragraf001.cshtml" />
     <Content Include="Views\Game\paragraf200.cshtml" />
     <Content Include="Views\Game\paragraf120.cshtml" />
     <Content Include="Views\Game\paragraf364.cshtml" />
-    <Content Include="Views\Game\paragraf44.cshtml" />
-    <Content Include="Views\Game\paragraf75.cshtml" />
+    <Content Include="Views\Game\paragraf044.cshtml" />
+    <Content Include="Views\Game\paragraf075.cshtml" />
     <Content Include="Views\Game\paragraf105.cshtml" />
-    <Content Include="Views\Game\paragraf56.cshtml" />
+    <Content Include="Views\Game\paragraf056.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
