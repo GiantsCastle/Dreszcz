@@ -6,20 +6,14 @@
 
 Po pewnym czasie dostrzegasz drzwi w południowej ścianie. 
 
-@Html.ActionLink("Idź dalej na zachód", "Index", new { paragraf = 120 });
-@Html.ActionLink("Spróbuj otworzyć drzw", "Index", new { paragraf = 364 });
-
-<!--I tutaj zaczyna być potrzebna postać. Musimy sprawdzić, czy drzwi były wcześniej otwarte i zależnie od tego wyświetlić dostępne opcje.
-
-if (drzwi1 == true)
+@if (Model.doorOpen == true)
 {
-    Html.ActionLink("Drzwi są otwarte. Już tutaj byłeś. Idź dalej na zachód.", "Index", new { paragraf = 120 });
+    @:Drzwi są otwarte. Już tutaj byłeś. 
+    @Html.ActionLink("Idź dalej na zachód.", "Index", new { paragraf = 120 });
 }
 else
 {
-    Drzwi są zamknięte.
-    Html.ActionLink("Idź dalej na zachód", "Index", new { paragraf = 120 });
-    Html.ActionLink("Spróbuj otworzyć drzwi", "Index", new { paragraf = 364 });
+    @:Drzwi są zamknięte.
+    @Html.ActionLink("Idź dalej na zachód", "Index", new { paragraf = 120 });
+    @Html.ActionLink("Spróbuj otworzyć drzwi", "Index", new { paragraf = 364 });
 }
-    coś takiego? Arek.-->
-
