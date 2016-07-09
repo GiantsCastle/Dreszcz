@@ -10,7 +10,6 @@ namespace Dreszcz.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
-            ContextKey = "Dreszcz.Models.ApplicationDbContext";
         }
 
         protected override void Seed(Dreszcz.Models.ApplicationDbContext context)
