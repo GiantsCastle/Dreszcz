@@ -283,7 +283,7 @@
     <Content Include="Views\Game\paragraf075.cshtml" />
     <Content Include="Views\Game\paragraf105.cshtml" />
     <Content Include="Views\Game\paragraf056.cshtml" />
-    <Content Include="Views\Game\Creation.cshtml" />
+    <Content Include="Views\Game\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

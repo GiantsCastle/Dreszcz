@@ -1,0 +1,28 @@
+﻿@model Dreszcz.Models.Character
+
+@{
+    ViewBag.Title = "Creation";
+}
+
+        To o Tobie mówią, że w Twoich żyłach zamiast krwi płynie lodowata woda, a twoje mięśnie są z najszlachetniejszej stali? Jeśli tak, spójrz w stronę zachodzącego słońca. Tam, na rubieżach królestwa Almanhagor, rozpoczynają się niezbadane Podziemia. Tylko Ty możesz wydrzeć ich Wielką Tajemnicę. Ruszaj!
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div>
+        Podaj Imię:<br />
+        <input type="text" name="imie"><br />
+
+        Dostępne punkty: 0<br />
+        Zreczność: <input type="number" name="zrecznosc" value="10" readonly="readonly"> + -<br />
+        Wytrzymałość: <input type="number" name="wytrzymalosc" value="10" readonly="readonly"> + -<br />
+        Szczescie: <input type="number" name="szczescie" value="10" readonly="readonly"> + -<br />
+
+        Wybierz eliksir: <br />
+        <input type="radio" name="eliksir" value="Zrecznosc">Eliksir Zręczności<br/>
+        <input type="radio" name="eliksir" value="Wytrzymalosc">Eliksir Wytrzymałości<br/>
+        <input type="radio" name="eliksir" value="Szczescie">Eliksir Szczęscia<br />
+
+        <input type="submit" value="Stówrz postać" /><br />
+    </div>
+}
