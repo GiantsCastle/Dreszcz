@@ -6,6 +6,7 @@ using System.Web;
 using Microsoft.AspNet.Identity;
 using System.Web.Mvc;
 using System.Data.Entity;
+using Dreszcz.Repositories;
 
 namespace Dreszcz.Controllers
 {
@@ -13,6 +14,13 @@ namespace Dreszcz.Controllers
     public class GameController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
+
+        private ICharactersRepository _charactersRepository;
+
+        public GameController(ICharactersRepository charactersRepository)
+        {
+            _charactersRepository = charactersRepository;
+        }
 
         // GET: Game
         public ActionResult Index(string paragraf)
