@@ -15,6 +15,7 @@ namespace Dreszcz.Repositories
         IQueryable<Character> All { get; }
         IQueryable<Character> AllIncluding(params Expression<Func<Character, object>>[] includeProperties);
         Character Find(int id);
+        Character getCurrentCharacter(String id);
         void InsertOrUpdate(Character character);
         void Delete(int id);
         void Save();
@@ -56,6 +57,12 @@ namespace Dreszcz.Repositories
                 context.Entry(character).State = EntityState.Modified;
                 Save();
             }
+        }
+
+        public Character getCurrentCharacter(String id)
+        {
+            Character character = context.Characters.FirstOrDefault(c => c.ApplicationUserId == id);
+            return character;
         }
 
         public void Delete(int id)
