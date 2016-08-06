@@ -9,6 +9,7 @@ namespace Dreszcz.Models
 
     public enum Przedmiot { miecz, tarcza, latarnia };
 
+    [Serializable]
     public class Character
     {
         public int CharacterId { get; set; }

@@ -17,12 +17,22 @@ namespace Dreszcz.Controllers
         // GET: Game
         public ActionResult Index(string paragraf)
         {
-            var userId = User.Identity.GetUserId();
-            Character postac = db.Characters.FirstOrDefault(c => c.ApplicationUserId == userId);
+            Character postac = (Character) Session["character"];
+            if (postac == null)
+            {
+                var userId = User.Identity.GetUserId();
+                postac = db.Characters.FirstOrDefault(c => c.ApplicationUserId == userId);
+                Session["character"] = postac;
+            }
+            else
+            {
+                postac.paragraf = paragraf;
+                db.SaveChanges();
+            }
 
             if (postac.imie == null)
                 RedirectToAction("Create");
-            if (paragraf != null )
+            if (postac.paragraf != null )
                 return View("paragraf" + paragraf, postac);
             else
                 return View(postac);
