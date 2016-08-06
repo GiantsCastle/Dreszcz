@@ -6,11 +6,8 @@
 
 Po pewnym czasie dostrzegasz drzwi w południowej ścianie. 
 
-@Model.Login
-@Model.imie
-@Model.eliksir
 
-@if (Model.doorOpen == true)
+@if (Model.doorOpen2 == true)
 {
     @:Drzwi są otwarte. Już tutaj byłeś. 
     @Html.ActionLink("Idź dalej na zachód.", "Index", new { paragraf = "120" });

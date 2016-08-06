@@ -32,14 +32,20 @@ namespace Dreszcz.Models
         public List<Przedmiot> przedmioty { get; set; }
 
         //Zmienne
-        public bool doorOpen { get; set; }
+        public bool doorOpen1 { get; set; }
+        public bool doorOpen2 { get; set; }
+        public bool doorOpen3 { get; set; }
+        public bool doorOpen4 { get; set; }
 
         public virtual ApplicationUser User { get; set; }
         public string ApplicationUserId { get; set; }
 
         public Character()
         {
-            doorOpen = false;
+            doorOpen1 = false;
+            doorOpen2 = false;
+            doorOpen3 = false;
+            doorOpen4 = false;
             posilki = 8;
             zloto = 0;
             przedmioty = new List<Przedmiot>();

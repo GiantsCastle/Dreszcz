@@ -1,0 +1,12 @@
+﻿@model Dreszcz.Models.Character
+
+@{
+    ViewBag.Title = "paragraf116";
+}
+
+Odbiegasz w kat pieczary. Kamienie pryskają spod stóp. ORK przygląda się uważnie i naciera. Musisz walczyć.
+ORK Z:6 W:4
+Możesz rozejrzeć się po pokoju, jeśli masz na to ochotę lub opuścić pieczarę.
+
+@Html.ActionLink("Rozejrzyj się po pokoju", "Index", new { paragraf = "089" });
+@Html.ActionLink("Opuść pieczarę", "Index", new { paragraf = "120" });

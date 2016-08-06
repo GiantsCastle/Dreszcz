@@ -1,0 +1,12 @@
+﻿@model Dreszcz.Models.Character
+
+@{
+    ViewBag.Title = "paragraf050";
+}
+
+Zbliżasz się do skrzyżowania. Możesz iść na północ, wschód lub zachód(skąd przyszedłeś).
+
+@Html.ActionLink("Idź na zachód", "Index", new { paragraf = "64" });
+@Html.ActionLink("Idź na wschód", "Index", new { paragraf = "130" });
+@Html.ActionLink("Idź na północ", "Index", new { paragraf = "310" });
+
