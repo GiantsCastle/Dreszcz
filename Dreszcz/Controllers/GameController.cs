@@ -27,10 +27,16 @@ namespace Dreszcz.Controllers
             var userId = User.Identity.GetUserId();
             Character postac = _charactersRepository.getCurrentCharacter(userId);
 
+            if (paragraf != null)
+            {
+                postac.paragraf = paragraf;
+                _charactersRepository.InsertOrUpdate(postac);
+            }
+
             if (postac.imie == null)
                 RedirectToAction("Create");
-            if (paragraf != null )
-                return View("paragraf" + paragraf, postac);
+            if (postac.paragraf != null )
+                return View("paragraf" + postac.paragraf, postac);
             else
                 return View(postac);
         }
@@ -64,7 +70,6 @@ namespace Dreszcz.Controllers
                 oryginal.wytrzymalosc = postac.wytrzymalosc;
                 oryginal.zrecznosc = postac.zrecznosc;
                 _charactersRepository.InsertOrUpdate(oryginal);
-                //db.SaveChanges();
                 return RedirectToAction("Index");
             }
             else
