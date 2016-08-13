@@ -6,33 +6,30 @@ using System.Web;
 using Microsoft.AspNet.Identity;
 using System.Web.Mvc;
 using System.Data.Entity;
+using Dreszcz.Repositories;
 
 namespace Dreszcz.Controllers
 {
     [Authorize]
     public class GameController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        //private ApplicationDbContext db = new ApplicationDbContext();
+
+        private ICharactersRepository _charactersRepository;
+        public GameController(ICharactersRepository charactersRepository)
+        {
+            _charactersRepository = charactersRepository;
+        }
 
         // GET: Game
         public ActionResult Index(string paragraf)
         {
-            Character postac = (Character) Session["character"];
-            if (postac == null)
-            {
-                var userId = User.Identity.GetUserId();
-                postac = db.Characters.FirstOrDefault(c => c.ApplicationUserId == userId);
-                Session["character"] = postac;
-            }
-            else
-            {
-                postac.paragraf = paragraf;
-                db.SaveChanges();
-            }
+            var userId = User.Identity.GetUserId();
+            Character postac = _charactersRepository.getCurrentCharacter(userId);
 
             if (postac.imie == null)
                 RedirectToAction("Create");
-            if (postac.paragraf != null )
+            if (paragraf != null )
                 return View("paragraf" + paragraf, postac);
             else
                 return View(postac);
@@ -42,7 +39,7 @@ namespace Dreszcz.Controllers
         public ActionResult Create()
         {
             var userId = User.Identity.GetUserId();
-            Character postac = db.Characters.FirstOrDefault(c => c.ApplicationUserId == userId);
+            Character postac = _charactersRepository.getCurrentCharacter(userId);
 
             return View(postac);
         }
@@ -54,7 +51,7 @@ namespace Dreszcz.Controllers
             if (ModelState.IsValid)
             {
                 var userId = User.Identity.GetUserId();
-                Character oryginal = db.Characters.FirstOrDefault(c => c.ApplicationUserId == userId);
+                Character oryginal = _charactersRepository.getCurrentCharacter(userId);
 
                 if (oryginal == null)
                 {
@@ -66,7 +63,8 @@ namespace Dreszcz.Controllers
                 oryginal.zrecznosc = postac.zrecznosc;
                 oryginal.wytrzymalosc = postac.wytrzymalosc;
                 oryginal.zrecznosc = postac.zrecznosc;
-                db.SaveChanges();
+                _charactersRepository.InsertOrUpdate(oryginal);
+                //db.SaveChanges();
                 return RedirectToAction("Index");
             }
             else
