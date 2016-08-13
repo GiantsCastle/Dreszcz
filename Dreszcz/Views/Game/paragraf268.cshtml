@@ -1,0 +1,19 @@
+﻿@model Dreszcz.Models.Character
+
+@{
+    ViewBag.Title = "paragraf268";
+}
+
+Krótki tunel dochodzi do zbutwiałych, starych drzwi. Jeśli jeszcze za nimi nie byłeś, możesz wejść - patrz 317. Jeśli wolisz zawrócić - patrz 102.
+
+@if (Model.doorOpen4 == true)
+{
+    @:Już tutaj byłeś.
+    @Html.ActionLink("Zawracasz.", "Index", new { paragraf = "102" });
+}
+else
+{
+    @Html.ActionLink("Wchodzisz za drzwi", "Index", new { paragraf = "317" });
+    @Html.ActionLink("Zawracasz", "Index", new { paragraf = "102" });
+}
+
