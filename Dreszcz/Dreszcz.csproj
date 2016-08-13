@@ -204,17 +204,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201607110919330_init.cs" />
-    <Compile Include="Migrations\201607110919330_init.Designer.cs">
-      <DependentUpon>201607110919330_init.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Character.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\CharacterRepository.cs" />
+    <Compile Include="Repositories\CharactersRepository.cs" />
     <Compile Include="Services\CharacterService.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -289,26 +285,6 @@
     <Content Include="Views\Game\paragraf105.cshtml" />
     <Content Include="Views\Game\paragraf056.cshtml" />
     <Content Include="Views\Game\Create.cshtml" />
-    <Content Include="Views\Game\paragraf029.cshtml" />
-    <Content Include="Views\Game\paragraf116.cshtml" />
-    <Content Include="Views\Game\paragraf089.cshtml" />
-    <Content Include="Views\Game\paragraf296.cshtml" />
-    <Content Include="Views\Game\paragraf331.cshtml" />
-    <Content Include="Views\Game\paragraf045.cshtml" />
-    <Content Include="Views\Game\paragraf039.cshtml" />
-    <Content Include="Views\Game\paragraf228.cshtml" />
-    <Content Include="Views\Game\paragraf102.cshtml" />
-    <Content Include="Views\Game\paragraf064.cshtml" />
-    <Content Include="Views\Game\paragraf351.cshtml" />
-    <Content Include="Views\Game\paragraf264.cshtml" />
-    <Content Include="Views\Game\paragraf284.cshtml" />
-    <Content Include="Views\Game\paragrafTEST.cshtml" />
-    <Content Include="Views\Game\paragraf050.cshtml" />
-    <Content Include="Views\Game\paragraf310.cshtml" />
-    <Content Include="Views\Game\paragraf265.cshtml" />
-    <Content Include="Views\Game\paragraf268.cshtml" />
-    <Content Include="Views\Game\paragraf317.cshtml" />
-    <Content Include="Views\Game\paragraf374.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -323,11 +299,6 @@
     </Content>
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201607110919330_init.resx">
-      <DependentUpon>201607110919330_init.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
