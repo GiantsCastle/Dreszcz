@@ -27,18 +27,24 @@ namespace Dreszcz.Controllers
             var userId = User.Identity.GetUserId();
             Character postac = _charactersRepository.getCurrentCharacter(userId);
 
-            if (paragraf != null)
-            {
-                postac.paragraf = paragraf;
-                _charactersRepository.InsertOrUpdate(postac);
-            }
-
             if (postac.imie == null)
                 RedirectToAction("Create");
             if (postac.paragraf != null )
                 return View("paragraf" + postac.paragraf, postac);
             else
                 return View(postac);
+        }
+
+        [HttpPost]
+        public ActionResult Index(string paragraf, Character character)
+        {
+            if(ModelState.IsValid)
+            {
+                character.paragraf = paragraf;
+                _charactersRepository.Update(character);
+                return RedirectToAction("Index", paragraf);                
+            }
+            return View();
         }
 
 
