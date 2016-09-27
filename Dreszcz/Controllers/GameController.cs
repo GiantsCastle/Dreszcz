@@ -25,12 +25,19 @@ namespace Dreszcz.Controllers
         public ActionResult Index(string paragraf)
         {
             var userId = User.Identity.GetUserId();
-            Character postac = _charactersRepository.getCurrentCharacter(userId);
+            Character postac = (Character)Session["character"];
+            if (postac == null || postac.ApplicationUserId != userId)
+            {
+                postac = _charactersRepository.getCurrentCharacter(userId);
+            }
+            Session["character"] = postac;
+            postac.paragraf = paragraf;
+            _charactersRepository.Update(postac);
 
             if (postac.imie == null)
-                RedirectToAction("Create");
-            if (paragraf != null )
-                return View("paragraf" + paragraf, postac);
+                return RedirectToAction("Create");
+            if (postac.paragraf != null)
+                return View("paragraf" + postac.paragraf, postac);
             else
                 return View(postac);
         }
@@ -64,7 +71,7 @@ namespace Dreszcz.Controllers
                 oryginal.wytrzymalosc = postac.wytrzymalosc;
                 oryginal.zrecznosc = postac.zrecznosc;
                 _charactersRepository.InsertOrUpdate(oryginal);
-                //db.SaveChanges();
+                Session["character"] = postac;
                 return RedirectToAction("Index");
             }
             else

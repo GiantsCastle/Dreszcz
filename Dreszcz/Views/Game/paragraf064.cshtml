@@ -1,0 +1,12 @@
+﻿@model Dreszcz.Models.Character
+
+@{
+    ViewBag.Title = "paragraf064";
+}
+
+Zbliżasz się do skrzyżowania. Możesz iść w każdym z czterech kierunków.
+
+@Html.ActionLink("Idź na zachód", "Index", new { paragraf = "296" });
+@Html.ActionLink("Idź na wschód", "Index", new { paragraf = "284" });
+@Html.ActionLink("Idź na północ", "Index", new { paragraf = "264" });
+@Html.ActionLink("Idź na południe", "Index", new { paragraf = "224" });

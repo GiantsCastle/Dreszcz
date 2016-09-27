@@ -19,11 +19,13 @@ namespace Dreszcz.Repositories
         void InsertOrUpdate(Character character);
         void Delete(int id);
         void Save();
+        void Update(Character character);
     }
 
     public class CharactersRepository : ICharactersRepository
     {
         private ApplicationDbContext context = new ApplicationDbContext();
+
 
         public IQueryable<Character> All
         {
@@ -74,6 +76,13 @@ namespace Dreszcz.Repositories
 
         public void Save()
         {
+            context.SaveChanges();
+        }
+
+        public void Update(Character character)
+        {
+            Character original = context.Characters.Find(character.CharacterId);
+            original = character;
             context.SaveChanges();
         }
     }
