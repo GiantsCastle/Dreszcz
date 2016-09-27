@@ -3,7 +3,6 @@
   <groupId>pl.giantscastle</groupId>
   <artifactId>Dreszcz</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <packaging>war</packaging>
   <name>Dreszcz</name>
   <description>Gra Paragrafowa</description>
   
