@@ -1,0 +1,281 @@
+﻿@font-face
+{
+    font-family: 'menuFont';
+    src: url('/fonts/vinque.regular.ttf') format("truetype");
+}
+@font-face
+{
+    font-family: 'header';
+    src: url('/fonts/Metamorphous-Regular.ttf');
+}
+
+@import url(https://fonts.googleapis.com/css?family=Libre+Baskerville&subset=latin,latin-ext);
+
+
+
+/* - - - - - - - - - - - - - - - - - - - GENERAL - - - - - - - - - - - - - - -*/
+*
+{
+    box-sizing:border-box;
+    font-size: 20px;
+    color: #c8c2c2;
+}
+
+
+body
+{
+    background-image: url('img/background.jpg');
+    background-size: cover;
+ }
+
+a, a:link, a:hover, a:active, a:visited
+{
+    text-decoration: none;
+}
+
+p
+{
+    font-family: 'Libre Baskerville', serif;
+    padding: 0 5% 5% 5%;
+}
+
+h1,
+h2,
+h3,
+h4
+{
+   color: black;
+   padding: 2.5%;
+   font-family: header;
+}
+
+.wrapper
+{
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/*- - - - - - - - - - - - - - - - - -  HEADER- - - - - - - - - - - - - - -  */
+header
+{
+    width: 100%;
+}
+
+    header > img
+        {
+            margin: auto;
+        }
+
+/*- - - - - - - - - - - - - - - - - -  NAVIGATION- - - - - - - - - - - - - - -  */
+nav
+{
+    width: 90%;
+    margin: auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+    nav ul 
+        {
+            list-style: none;
+            width: 100%;
+            margin: auto;
+            display: flex;
+            justify-content: space-around;
+        }
+
+    nav a
+        {
+            color: white;
+            padding: 50%;
+            display: block;
+            font-size: 1.8em;
+            padding: 0.7em;
+            text-shadow: 10px 10px 10px #000000;
+        }
+
+    nav a:hover
+        {
+            color: whitesmoke;
+        }
+
+    nav li
+        {   
+            font-family: 'menuFont';
+            font-size: 75%;
+            text-align: center;      
+            width:        
+            
+        }
+
+    nav a:before
+    {
+        content:  "⎾";
+        font-size: 80%;
+        font-weight: bolder;
+    }
+
+    nav a:after
+    {
+        content: "⏌";
+        font-size: 80%;
+        font-weight: bolder;           
+    }
+    
+    nav li:hover
+        {
+            transform: scale(1.2);
+        }
+
+main p
+{
+    font-size: 1.5em;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    font-size: 1.5em; 
+}
+
+/*- - - - - - - - - - - - - - - - - -  MAIN ABOUT- - - - - - - - - - - - - - -  */
+.about-section,
+.about-subpage
+
+{
+    background-color: #292828;
+    border-radius: 5%;
+    -webkit-box-shadow: 0px 0px 9px 4px  rgba(82,4,4,0.66);
+    -moz-box-shadow: 0px 0px 9px 4px  rgba(82,4,4,0.66);
+    box-shadow: 0px 0px 9px 4px  rgba(82,4,4,0.66);
+    -webkit-box-shadow: inset 0px 0px 9px 4px  rgba(82,4,4,0.66);
+    -moz-box-shadow: inset 0px 0px 9px 4px  rgba(82,4,4,0.66);
+    box-shadow: inset 0px 0px 15px 4px  rgba(82,4,4,0.66);
+}
+
+    .aboutgame
+        {
+            font-size: 3em;
+        }
+
+/*- - - - - - - - - - - - - - - - - -  SUBSITE ABOUT- - - - - - - - - - - - - - -  */
+.about-subpage
+{
+    width: 80%;
+    margin: auto;
+    border-radius: 5%;
+}
+
+.about-subpage > h2
+{
+    padding: 5% 0 2% 0;
+}
+
+/*- - - - - - - - - - - - - - - - - -  NEWS- - - - - - - - - - - - - - -  */
+.news-section
+{
+    background-color:   #292828;
+    border-radius:      5%;
+    -webkit-box-shadow: 0px 0px 9px 4px  rgba(82,4,4,0.66);
+    -moz-box-shadow:    0px 0px 9px 4px  rgba(82,4,4,0.66);
+    box-shadow:         0px 0px 9px 4px  rgba(82,4,4,0.66);
+    -webkit-box-shadow: inset 0px 0px 9px 4px  rgba(82,4,4,0.66);
+    -moz-box-shadow:    inset 0px 0px 9px 4px  rgba(82,4,4,0.66);
+    box-shadow:         inset 0px 0px 15px 4px  rgba(82,4,4,0.66);
+    margin-top:         1em;
+}
+
+/*- - - - - - - - - - - - - - - - - -  LOG IN- - - - - - - - - - - - - - -  */
+.log-section
+{
+    background-color:   #292828;
+    border-radius:      10%;
+    -webkit-box-shadow: 0px 0px 9px 4px  rgba(82,4,4,0.66);
+    -moz-box-shadow:    0px 0px 9px 4px  rgba(82,4,4,0.66);
+    box-shadow:         0px 0px 9px 4px  rgba(82,4,4,0.66);
+    -webkit-box-shadow: inset 0px 0px 9px 4px  rgba(82,4,4,0.66);
+    -moz-box-shadow:    inset 0px 0px 9px 4px  rgba(82,4,4,0.66);
+    box-shadow:         inset 0px 0px 15px 4px  rgba(82,4,4,0.66);
+    margin-left:        1em;
+    width:              23.1%;
+    text-align:         center;
+
+}
+
+    .log-name
+        {
+            display: block;
+            width: 90%;
+            margin: 0.4em;
+            margin-bottom: 1em;
+            background-color: #3f3d3d;
+            border: 4px solid rgba(82,5,5,0.66);
+        }
+
+    .log-password:focus,
+    .log-name:focus,
+    .btn-login
+    {
+        outline: none;
+    }
+
+    .log-password
+        {
+            width: 90%;
+            display: block;
+            margin: 0.4em;
+            background-color: #3f3d3d;
+            border: 4px solid rgba(82,4,4,0.66);
+        }
+
+    .btn-login
+        {
+            display:block;
+            width: 40%;
+            margin: 1.1em auto;
+            background-color: inherit;
+            border: 4px solid rgba(82,4,4,0.66);
+            -webkit-box-shadow: 0px 0px 3px 3px rgba(82,4,4,0.66);
+            -moz-box-shadow: 0px 0px 3px 3px rgba(82,4,4,0.66);
+            box-shadow:  0px 0px 3px 3px rgba(50,4,4,0.66);
+        }
+
+    .log-section a
+    {
+        display: block;
+        margin: auto;
+        color: white;
+    }
+
+    .log-section a:hover
+    {
+        text-decoration: white;
+    }
+/*- - - - - - - - - - - - - - - - - -  FOOTER- - - - - - - - - - - - - - -  */
+footer
+{
+    background-color: inherit;
+    margin: 1em;
+}
+
+    footer > p
+        {
+            color: white;
+            font-size: 1em;
+            padding: 0.3em;
+            font-family: 'Libre Baskerville', serif;
+        }
+
+
+/*- - - - - - - - - - - - - - - - - -  MEDIA Q- - - - - - - - - - - - - - -  */
+ @media only screen and (max-width: 504px){     
+
+     .log-section
+     {
+         display: none;
+     }
+ }
+
+ @media only screen and (min-width: 450px){
+
+ .log-nav    
+     {         
+         display: none;     
+     }  
+ }
