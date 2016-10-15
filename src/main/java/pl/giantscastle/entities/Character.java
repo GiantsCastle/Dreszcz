@@ -1,8 +1,9 @@
-package pl.giantscastle.main.domain;
+package pl.giantscastle.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -10,7 +11,7 @@ import javax.persistence.Table;
 @Table(name = "character_table")
 public class Character {
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "character_id", columnDefinition = "INTEGER(10) NOT NULL")
 	private long characterId;
 	@Column(name = "character_name", columnDefinition = "VARCHAR(10) NOT NULL")
