@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Mama</title>
 </head>
 <body>
 	<% int x = 200/2+1; %> <!-- tzw skryplet -->
