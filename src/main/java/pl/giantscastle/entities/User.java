@@ -16,38 +16,12 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "user_id", columnDefinition = "INTEGER(10) NOT NULL")
 	private long userId;
-	@OneToOne
-	@JoinColumn
-	private Character characterId;
 	private String userName;
 	@Column(name = "user_email", columnDefinition = "VARCHAR(254) NOT NULL")
 	private String userEmail;
 	@Column(name = "user_password", columnDefinition = "VARCHAR(254) NOT NULL")
 	private String userPassword;
 	
-	public String getUserPassword() {
-		return userPassword;
-	}
-
-	public Character getCharacterId() {
-		return characterId;
-	}
-
-	public void setCharacterId(Character characterId) {
-		this.characterId = characterId;
-	}
-
-	public void setUserPassword(String userPassword) {
-		this.userPassword = userPassword;
-	}
-
-	public String getUserEmail() {
-		return userEmail;
-	}
-
-	public void setUserEmail(String userEmail) {
-		this.userEmail = userEmail;
-	}
 
 	public long getUserId() {
 		return userId;
@@ -65,4 +39,21 @@ public class User {
 		this.userName = userName;
 	}
 
+	public String getUserEmail() {
+		return userEmail;
+	}
+
+	public void setUserEmail(String userEmail) {
+		this.userEmail = userEmail;
+	}
+
+	public String getUserPassword() {
+		return userPassword;
+	}
+
+	public void setUserPassword(String userPassword) {
+		this.userPassword = userPassword;
+	}
+
+	
 }
