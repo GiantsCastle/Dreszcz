@@ -1,4 +1,4 @@
-package pl.giantscastle.entities;
+package pl.giantscastle.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
