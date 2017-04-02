@@ -8,9 +8,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
-import pl.giantscastle.model.Character;
-import pl.giantscastle.model.User;
-import pl.giantscastle.model.Variable;
+import pl.giantscastle.entities.User;
+import pl.giantscastle.entities.Character;
+import pl.giantscastle.entities.Variable;
 
 @SpringBootApplication
 @ComponentScan("pl.giantscastle.*")
