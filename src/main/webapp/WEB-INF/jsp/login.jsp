@@ -1,20 +1,32 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
-    <head>
-        <title>Spring Security Example </title>
-    </head>
-    <body>
-        <div th:if="${param.error}">
-            Invalid username and password.
-        </div>
-        <div th:if="${param.logout}">
-            You have been logged out.
-        </div>
-        <form th:action="@{/login}" method="post">
-            <div><label> User Name : <input type="text" name="username"/> </label></div>
-            <div><label> Password: <input type="password" name="password"/> </label></div>
-            <div><input type="submit" value="Sign In"/></div>
-        </form>
-    </body>
-</html>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
+<c:set var="contextPath" value="${pageContext.request.contextPath}" />
+
+<%@ include file="common/header.jspf"%>
+<%@ include file="common/navigation.jspf"%>
+
+<div class="container">
+
+	<form method="POST" action="${contextPath}/login" class="form-signin">
+		<h2 class="form-heading">Log in</h2>
+
+		<div class="form-group ${error != null ? 'has-error' : ''}">
+			<span>${message}</span> <input name="username" type="text"
+				class="form-control" placeholder="Username" autofocus="true" /> <input
+				name="password" type="password" class="form-control"
+				placeholder="Password" /> <span>${error}</span> <input type="hidden"
+				name="${_csrf.parameterName}" value="${_csrf.token}" />
+
+			<button class="btn btn-lg btn-primary btn-block" type="submit">Log
+				In</button>
+			<h4 class="text-center">
+				<a href="${contextPath}/registration">Create an account</a>
+			</h4>
+		</div>
+
+	</form>
+
+</div>
+<%@ include file="common/footer.jspf"%>
