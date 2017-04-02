@@ -1,6 +1,6 @@
 <%@ include file="common/header.jspf"%>
 <%@ include file="common/navigation.jspf"%>
 <div class="container">
-	<a href="/game/">Gra</a>
+	Gramy sobie
 </div>
 <%@ include file="common/footer.jspf"%>

@@ -1,32 +1,44 @@
 package pl.giantscastle.controller;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-public class MainController {
-	enum SubPage { index, about, rules, authors}
+public class MainController {	
 	
 	@RequestMapping(value ="/")
-	public String index(Model model, HttpServletRequest request, HttpServletResponse response){
-		return main("index", model, request, response);
+	public String showIndex(){
+		return "index";
 	}
 	
-	@RequestMapping(value ="/{subSite}")
-    public String main(@PathVariable("subSite") String subSite, Model model, HttpServletRequest request, HttpServletResponse response) {
-		SubPage subPage;
-		try {
-			subPage = SubPage.valueOf(subSite);
-		} catch (IllegalArgumentException e) {
-			System.out.println("Not available access to /" + subSite); //ToDo Zmienic na Log4J
-			subPage = SubPage.index;
+	@RequestMapping(value ="/login")
+	public String showLoginForm(){
+		return "login";
+	}
+	
+	@RequestMapping(value ="/login", method = RequestMethod.POST)
+	public String logInAndShowGame(){
+		return "redirect:/game";
+	}
+	
+	@RequestMapping(value = "/game/", method = RequestMethod.GET)
+	public String showGame() {
+		return "game";
+	}
+	
+	private String getLoggedinUserName() {
+		Object principal = SecurityContextHolder.getContext()
+				.getAuthentication().getPrincipal();
+		
+		if (principal instanceof UserDetails) {
+			return ((UserDetails) principal).getUsername();
 		}
-		request.setAttribute("subPage", subPage+".jsp");
-        return "main"; 
-    }
+		
+		return principal.toString();
+	}
+	
+
 }
