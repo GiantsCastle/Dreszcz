@@ -1,0 +1,34 @@
+<div class="right">
+	<section id="login">
+		<form method="POST" action="${contextPath}/login" class="form-signin">
+			<h2 class="form-heading">Log in</h2>
+
+			<div class="form-group ${error != null ? 'has-error' : ''}">
+				<span>${message}</span> <input name="username" type="text"
+					class="form-control" placeholder="Username" autofocus="true" /> <input
+					name="password" type="password" class="form-control"
+					placeholder="Password" /> <span>${error}</span> <input
+					type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+
+				<button class="btn btn-lg btn-primary btn-block" type="submit">Log
+					In</button>
+				<h4 class="text-center">
+					<a href="${contextPath}/registration">Create an account</a>
+				</h4>
+			</div>
+
+		</form>
+		
+	</section>
+	<section id="social">
+		<div class="fb-page" data-href="https://www.facebook.com/Ochlapy/"
+			data-tabs="timeline" data-width="220" data-height="380"
+			data-small-header="false" data-adapt-container-width="true"
+			data-hide-cover="true" data-show-facepile="true">
+			<blockquote cite="https://www.facebook.com/Ochlapy/"
+				class="fb-xfbml-parse-ignore">
+				<a href="https://www.facebook.com/Ochlapy/">Ochłapy idealizmu</a>
+			</blockquote>
+		</div>
+	</section>
+</div>

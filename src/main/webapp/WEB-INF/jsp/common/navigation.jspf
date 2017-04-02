@@ -1,9 +1,11 @@
-<nav>
-            <ul>
-                <li><a href="index.html">home</a></li>
-                <li><a href="about.html">o grze</a></li>
-                <li><a href="rules.html">zasady</a></li>
-                <li><a href="authors.html">autorzy</a></li>
-                <li class="hidden"><a href="login.html">zaloguj się</a></li>
-            </ul>
-</nav>
+	<div class="container">	
+		<nav>
+			<ul>
+				<li><a href="">Home</a></li>
+				<li><a href="">O grze</a></li>
+				<li><a href="">Zasady</a></li>
+				<li><a href="">Autorzy</a></li>
+				<li><a href="">Kontakt</a></li>
+			</ul>
+		</nav>
+</div>

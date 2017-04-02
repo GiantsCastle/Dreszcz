@@ -24,7 +24,7 @@ public class MainController {
 		return "redirect:/game";
 	}
 	
-	@RequestMapping(value = "/game/", method = RequestMethod.GET)
+	@RequestMapping(value = "/game", method = RequestMethod.GET)
 	public String showGame() {
 		return "game";
 	}

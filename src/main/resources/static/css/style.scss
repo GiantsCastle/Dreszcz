@@ -1,0 +1,132 @@
+// - - - - Varibles - - - -
+$text-color: #fff;
+$hover-color: rgb(186, 26, 26);
+$section-background: rgba(0,0,0,.9);
+
+
+ // - - - - -GRNERAL - - -
+body{
+  background: url('../../img/background.jpg') no-repeat center;
+background-size: cover;
+
+}
+
+a {
+    color: $text-color;
+
+    &:hover {
+        text-decoration: none;
+        color: $hover-color;
+    }
+}
+
+button,
+h1,
+h3,
+h4,
+label,
+p {
+    color: $text-color;
+}
+
+#login,
+#news,
+#social,
+footer,
+nav {
+    background-color: $section-background;
+}
+// - - - - header and nav - - - -
+
+header {
+    nav {
+        ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+
+            li {
+                padding: 2.5%;
+
+                a {
+                    white-space: nowrap;
+                }
+            }
+        }
+    }
+}
+
+.left {
+    width: 865px / 1140px * 100%;
+    float: left;
+}
+
+.right {
+    width: 260px / 1140px * 100%;
+    float: right;
+
+    #login {
+        padding: 8px;
+
+        form {
+            text-align: center;
+
+            label {
+                margin: 5px auto 0;
+            }
+
+            button {
+                margin: 8px auto 12px;
+            }
+
+            p {
+                margin: 0;
+            }
+
+            a {
+                color: rgb(134, 233, 29);
+            }
+        }
+    }
+
+    #social {
+        margin-top: 15px;
+    }
+}
+// - - - - footer - - - -
+footer {
+    clear: both;
+
+    ul {
+        width: 50%;
+        margin: auto;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+
+        li {
+            position: relative;
+            padding: 0 25px;
+
+            &:not(:last-child):after {
+                position: absolute;
+                right: 0;
+                content: " | ";
+                color: rgb(200, 183, 28);
+            }
+
+            a {
+                white-space: nowrap;
+            }
+        }
+    }
+
+    .footer-wrap {
+        text-align: center;
+        padding: 10px;
+
+        p {
+            margin-top: 10px;
+        }
+    }
+}
