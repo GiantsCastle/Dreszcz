@@ -29,6 +29,21 @@ public class MainController {
 		return "game";
 	}
 	
+	@RequestMapping(value = "/authors", method = RequestMethod.GET)
+	public String showAuthors() {
+		return "authors";
+	}
+	
+	@RequestMapping(value = "/rules", method = RequestMethod.GET)
+	public String showRules() {
+		return "rules";
+	}
+	
+	@RequestMapping(value = "/registration", method = RequestMethod.GET)
+	public String showRegistration() {
+		return "registration";
+	}
+	
 	private String getLoggedinUserName() {
 		Object principal = SecurityContextHolder.getContext()
 				.getAuthentication().getPrincipal();
