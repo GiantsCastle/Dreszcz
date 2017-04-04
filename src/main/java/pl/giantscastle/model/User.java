@@ -13,7 +13,7 @@ public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "user_id", columnDefinition = "INTEGER(10) NOT NULL")
-	private long userId;
+	private String userId;
 	private String userName;
 	@Column(name = "user_email", columnDefinition = "VARCHAR(254) NOT NULL")
 	private String userEmail;
@@ -21,11 +21,11 @@ public class User {
 	private String userPassword;
 	
 
-	public long getUserId() {
+	public String getUserId() {
 		return userId;
 	}
 
-	public void setUserId(long userId) {
+	public void setUserId(String userId) {
 		this.userId = userId;
 	}
 
