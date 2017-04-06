@@ -5,6 +5,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import pl.giantscastle.model.Character;
@@ -12,6 +13,8 @@ import pl.giantscastle.model.User;
 
 @Repository
 public class UserDao {
+	@Autowired
+	User user;
 	
 	public User create(String userName, String userEmail,
 			String userPassword) {
@@ -28,18 +31,6 @@ public class UserDao {
 		entityManager.close();
 		entityManagerFactory.close();
 		return user;
-	}
-	
-	public String getID(String userName) {
-		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("myDatabase");
-		EntityManager entityManager = entityManagerFactory.createEntityManager();
-		entityManager.getTransaction().begin();
-		User user = entityManager.find(User.class, userName);
-		String userID = user.getUserId();
-		entityManager.getTransaction().commit();
-		entityManager.close();
-		entityManagerFactory.close();
-		return userID;
 	}
 	
 	public User get(long id) {

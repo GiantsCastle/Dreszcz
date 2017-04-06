@@ -33,7 +33,6 @@ public class MainController {
 	
 	@RequestMapping(value = "/game", method = RequestMethod.GET)
 	public String showGame(ModelMap model) {
-		model.put("id", user.getUserID());
 		return "game";
 	}
 	

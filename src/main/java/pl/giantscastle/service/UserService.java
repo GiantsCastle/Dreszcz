@@ -9,10 +9,5 @@ import pl.giantscastle.DAO.UserDao;
 public class UserService {
 	@Autowired
 	UserDao user;
-	
-	public String getUserID(){
-		String test = user.getID("user10");
-		System.out.println("-----------dana testowa id:"+test);
-		return test;
-	}
+
 }

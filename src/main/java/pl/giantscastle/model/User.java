@@ -7,6 +7,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.stereotype.Component;
+
+@Component
 @Entity
 @Table(name = "user_table")
 public class User {
@@ -22,7 +25,7 @@ public class User {
 	
 
 	public String getUserId() {
-		return userId;
+		return "dupa";
 	}
 
 	public void setUserId(String userId) {
