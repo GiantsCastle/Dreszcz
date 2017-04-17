@@ -1,0 +1,128 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+* {
+  color: #fff; }
+
+html, body, .wrap {
+  height: 100%;
+  background: #000; }
+
+.wrap {
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+#game-screen {
+  width: 70%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.menu {
+  width: 28%;
+  height: 400px;
+  display: flex;
+  align-items: center; }
+  .menu ul {
+    display: flex;
+    margin-left: auto;
+    flex-direction: column; }
+  .menu li {
+    display: block;
+    margin: 20px auto;
+    text-align: center; }
+    .menu li a {
+      text-transform: uppercase;
+      display: block;
+      width: 100px;
+      background: #af1600;
+      padding: 15px;
+      text-decoration: none; }
+
+.game-text {
+  width: 40%;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .game-text .paragraph {
+    padding: 15px; }
+
+.statistics {
+  display: inline-block;
+  width: 28%;
+  height: 400px;
+  background: #af1600; }
+  .statistics .stats-header {
+    font-size: 25px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 10px; }
+  .statistics .stats {
+    margin-top: 50px; }
+    .statistics .stats .health-container, .statistics .stats .lucky-container {
+      display: block;
+      margin: 10px;
+      line-height: 15px; }
+      .statistics .stats .health-container .amount, .statistics .stats .health-container .health, .statistics .stats .health-container .lucky, .statistics .stats .lucky-container .amount, .statistics .stats .lucky-container .health, .statistics .stats .lucky-container .lucky {
+        display: inline-block; }
+      .statistics .stats .health-container .amount, .statistics .stats .lucky-container .amount {
+        margin-right: 5px;
+        font-size: 15px; }
+      .statistics .stats .health-container .lucky, .statistics .stats .lucky-container .lucky {
+        width: 150px;
+        height: 15px;
+        background: green; }
+      .statistics .stats .health-container .health, .statistics .stats .lucky-container .health {
+        width: 150px;
+        height: 15px;
+        background: red; }
+
+/*# sourceMappingURL=style.css.map */
