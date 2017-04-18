@@ -1,0 +1,222 @@
+//RESET
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
+
+
+
+@font-face
+{
+  font-family: 'menuFont';
+  src: url('../../fonts/vinque.regular.ttf') format("truetype");
+}
+
+//VARIABLES
+$sidebars_color: #8E0000;
+$paragraph_color: #bf7a00;
+$text-color: #fff;
+$text-font: 'Cormorant Garamond', serif;
+
+
+* {
+  color: $text-color;
+}
+
+html, body, .wrap {
+  height: 100%;
+  background: #000;
+}
+
+.wrap {
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#game-screen {
+  width: 70%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu {
+  //display: inline-block;
+  width: 23%;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  font-family: 'menuFont';
+
+
+  ul {
+
+    display: flex;
+    //align-items: center;/
+    //justify-content: center;
+    margin-left: auto;
+    flex-direction: column;
+
+  }
+
+  li {
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    a {
+      display: block;
+      width: 100px;
+      background: $sidebars_color;
+      padding: 15px;
+      text-decoration: none;
+      transition: border-color .6s ease;
+      border: 3px solid transparent;
+
+        &:hover{
+          border: 3px solid #fff;
+
+        }
+    }
+  }
+}
+
+.game-text {
+  width: 54%;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: $text-font;
+
+  .paragraph {
+    padding: 45px;
+    font-size: 18px;
+    line-height: 23px;
+
+  }
+}
+
+.statistics {
+  display: inline-block;
+  width: 23%;
+  height: 400px;
+  background: $sidebars_color;
+  position: relative;
+
+  .stats-header{
+    font-size: 25px;
+    text-align: center;
+    margin-top: 10px;
+    font-family: 'menuFont';
+  }
+
+  .stats {
+    margin-top: 50px;
+    text-align: center;
+
+    .health-container, .lucky-container {
+      display: block;
+      margin: 10px;
+      line-height: 15px;
+
+      .amount, .health, .lucky {
+        display: inline-block;
+      }
+
+      .amount{
+        font-family: 'menuFont';
+        margin-right: 5px;
+        font-size: 15px;
+      }
+
+      .lucky {
+        width: 150px;
+        height: 15px;
+        background: green;
+      }
+
+      .health {
+        width: 150px;
+        height: 15px;
+        background: red;
+      }
+    }
+  }
+
+  .icons{
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    margin: 0 auto;
+    //right: 0;
+
+    .amount, .potion, .cash{
+      display: block;
+    }
+
+    .potions, .coins{
+      display: inline-block;
+    }
+
+    .amount{
+      display: inline-block;
+      font-family: 'menuFont';
+    }
+  }
+}
