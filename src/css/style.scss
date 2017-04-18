@@ -200,10 +200,12 @@ html, body, .wrap {
   }
 
   .icons{
-    position: absolute;
-    bottom: 0;
-    text-align: center;
+    width: 100%;
     margin: 0 auto;
+    display: block ;
+    position: absolute;
+    bottom: 5%;
+    text-align: center;
     //right: 0;
 
     .amount, .potion, .cash{
@@ -212,11 +214,13 @@ html, body, .wrap {
 
     .potions, .coins{
       display: inline-block;
+      padding: 10px;
     }
 
     .amount{
       display: inline-block;
       font-family: 'menuFont';
+      margin-top: 10px;
     }
   }
 }
